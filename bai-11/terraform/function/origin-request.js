@@ -8,7 +8,7 @@ exports.handler = async (event, context, callback) => {
         request.origin = {
           s3: {
             authMethod: "origin-access-identity",
-            domainName: "terraform-serries-s3-pro.s3.amazonaws.com",
+            domainName: "terraform-toanld2-s3-pro.s3.amazonaws.com",
             region: "us-west-2",
             path: "",
           },
@@ -17,7 +17,7 @@ exports.handler = async (event, context, callback) => {
         headers["host"] = [
           {
             key: "host",
-            value: "terraform-serries-s3-pro.s3.amazonaws.com",
+            value: "terraform-toanld2-s3-pro.s3.amazonaws.com",
           },
         ];
         break;
@@ -27,7 +27,7 @@ exports.handler = async (event, context, callback) => {
         request.origin = {
           s3: {
             authMethod: "origin-access-identity",
-            domainName: "terraform-serries-s3-pre-pro.s3.amazonaws.com",
+            domainName: "terraform-toanld2-s3-pre-pro.s3.amazonaws.com",
             region: "us-west-2",
             path: "",
           },
@@ -36,7 +36,7 @@ exports.handler = async (event, context, callback) => {
         headers["host"] = [
           {
             key: "host",
-            value: "terraform-serries-s3-pre-pro.s3.amazonaws.com",
+            value: "terraform-toanld2-s3-pre-pro.s3.amazonaws.com",
           },
         ];
         break;
