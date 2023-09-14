@@ -41,8 +41,8 @@ resource "aws_lambda_function" "origin_request_function" {
 
   handler          = "origin-request.handler"
   runtime          = "nodejs14.x"
-  filename         = "function/origin-request.zip"
-  source_code_hash = filebase64sha256("function/origin-request.zip")
+  filename         = data.archive_file.zip_file_for_lambda_origin_request.output_path
+  source_code_hash = data.archive_file.zip_file_for_lambda_origin_request.output_base64sha256
 
   provider = aws.us-east-1
 }
