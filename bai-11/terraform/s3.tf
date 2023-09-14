@@ -1,11 +1,19 @@
 resource "aws_s3_bucket" "s3_pro" {
-  bucket        = "terraform-serries-s3-pro"
+  bucket        = "terraform-toanld2-s3-pro"
   force_destroy = true
+}
+
+resource "aws_s3_bucket_ownership_controls" "s3_pro_bucket_acl_ownership" {
+  bucket = aws_s3_bucket.s3_pro.id
+  rule {
+    object_ownership = "ObjectWriter"
+  }
 }
 
 resource "aws_s3_bucket_acl" "s3_pro" {
   bucket = aws_s3_bucket.s3_pro.id
   acl    = "private"
+  depends_on = [aws_s3_bucket_ownership_controls.s3_pro_bucket_acl_ownership]
 }
 
 resource "aws_s3_bucket_website_configuration" "s3_pro" {
